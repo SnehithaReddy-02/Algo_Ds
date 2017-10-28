@@ -28,7 +28,7 @@ typedef pair<lli,lli> mp;
 int debugg = 0;
 
 bool sort_fxn(mp a,mp b){
-    return a.second < b.second;
+    return (a.second < b.second);
 }
 
 /*
@@ -43,7 +43,7 @@ ulli buyMaximumProducts(ulli n, ulli k, vector <ulli> a) {
     for(int i=0;i<n;i++)
         vec[i]=mp(i+1,a[i]);
     sort(vec.begin(),vec.end(),sort_fxn);
-
+   //sorting a vector in ascending order
     ulli amount = k;
     ulli bought = 0;
     ulli buy;
@@ -70,4 +70,4 @@ int main() {
     ulli result = buyMaximumProducts(n, k, arr);
     cout << result << endl;
 }
-// a code by srbcheema1
+
