@@ -11,37 +11,37 @@
 
 using namespace std;
 
-struct node
+struct Node
 {
 	int data;
-	struct node* left;
-	struct node* right;
+	struct Node* left;
+	struct Node* right;
 };
 
-struct node* getNode(int data){
-	struct node* tmp = new node();
+struct Node* getNode(int data){
+	struct Node* tmp = new Node();
 	tmp->data = data;
 	tmp->left = NULL;
 	tmp->right = NULL;
 	return tmp;
 }
 
-struct node* insert(struct node* root,int data){
+struct Node* insert(struct Node* root,int data){
 	if (root==NULL)
 	{
 		root = getNode(data);
 	}
 	else if (data <= root->data)
 	{
-		root->left = insert(root->left,data); 
+		root->left = insert(root->left,data); // LEFT SUB TREE
 	}
 	else{
-		root->right = insert(root->right,data);
+		root->right = insert(root->right,data); // RIGHT SUB TREE
 	}
 	return root;
 }
 
-int search(struct node* root, int data){
+int search(struct Node* root, int data){
 	if (root==NULL)
 	{
 		return 0;
@@ -62,7 +62,7 @@ int search(struct node* root, int data){
 int main()
 {
 	boost;
-	struct node* root = NULL;
+	struct Node* root = NULL;
 	root = insert(root,15);
 	root = insert(root,10);
 	root = insert(root,20);
